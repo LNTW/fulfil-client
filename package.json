@@ -1,7 +1,7 @@
 {
   "name": "fulfil-client",
   "version": "0.1.0",
-  "description": "Interact with the Fulfil API using Javascript",
+  "description": "Interact with the Fulfil.io API using Javascript",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
