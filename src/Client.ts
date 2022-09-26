@@ -4,6 +4,7 @@ import { isEmpty, setUpErrorHandling } from "./helpers";
 import { Record } from "./Record";
 import { Report } from "./Report";
 import { InteractiveReport } from "./InteractiveReport";
+import { Wizard } from "./Wizard";
 
 export class Client {
   private readonly host: string;
@@ -48,6 +49,10 @@ export class Client {
   public today () {
     const DATE = this.model("ir.date");
     return DATE.method({ name: "today", params: [] });
+  }
+
+  public wizard (name: string) {
+    return new Wizard(this, name);
   }
 
   // TODO: Figure out how to get this to work properly
