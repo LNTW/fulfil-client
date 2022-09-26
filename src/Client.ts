@@ -1,6 +1,6 @@
 import { Model } from "./Model";
 import axios, { Axios } from "axios";
-import { isEmpty, setUpErrorHandling } from "./helpers";
+import { isEmpty, setUpErrorHandling } from "./utils/helpers";
 import { Record } from "./Record";
 import { Report } from "./Report";
 import { InteractiveReport } from "./InteractiveReport";

@@ -1,6 +1,6 @@
 import { Client } from "./Client";
 import type { AttachArgs, FindArgs, GetArgs, MethodArgs, SearchReadAllArgs } from "./interfaces/model.interface";
-import { chunk } from "./helpers";
+import { chunk } from "./utils/helpers";
 
 export class Model {
   public readonly path: string;
