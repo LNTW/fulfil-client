@@ -23,3 +23,7 @@ export const chunk = (array: Array<any>, chunkSize: number): Array<Array<any>> =
 export const range = (len: number): number[] => {
   return Array.from(Array(len)).map((x, i) => i);
 };
+
+export const isEmpty = (obj: object): boolean => {
+  return !Object.keys(obj).length;
+};

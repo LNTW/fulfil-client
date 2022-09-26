@@ -1,5 +1,5 @@
-import { Client } from "./client";
-import type { FindArgs, GetArgs, MethodArgs, SearchReadAllArgs } from "./interfaces/model.interface";
+import { Client } from "./Client";
+import type { AttachArgs, FindArgs, GetArgs, MethodArgs, SearchReadAllArgs } from "./interfaces/model.interface";
 import { chunk } from "./helpers";
 
 export class Model {
@@ -86,6 +86,14 @@ export class Model {
 
     const { data } = await this.client.session.get(`${ this.path }/${ id }`, { params });
     return data;
+  }
+
+  public async attach (args: AttachArgs) {
+    const Attachment = this.client.model("ir.attachment");
+    return Attachment.method({
+      name: "add_attachment_from_url",
+      params: [args.filename, args.url, `${ this.name },${ args.id }`],
+    });
   }
 
   public async* searchReadAll (args: SearchReadAllArgs) {

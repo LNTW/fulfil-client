@@ -33,3 +33,9 @@ export interface WriteArgs {
   modelIDs: number[];
   changes: object;
 }
+
+export interface AttachArgs {
+  id: number;
+  filename: string;
+  url: string;
+}
