@@ -2,6 +2,7 @@ import { Model } from "./Model";
 import axios, { Axios } from "axios";
 import { isEmpty, setUpErrorHandling } from "./helpers";
 import { Record } from "./Record";
+import { Report } from "./Report";
 
 export class Client {
   private readonly host: string;
@@ -34,6 +35,10 @@ export class Client {
 
   public record (name: string, id: number) {
     return new Record(this, name, id);
+  }
+
+  public report (name: string) {
+    return new Report(this, name);
   }
 
   public today () {
