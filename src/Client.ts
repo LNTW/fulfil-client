@@ -3,6 +3,7 @@ import axios, { Axios } from "axios";
 import { isEmpty, setUpErrorHandling } from "./helpers";
 import { Record } from "./Record";
 import { Report } from "./Report";
+import { InteractiveReport } from "./InteractiveReport";
 
 export class Client {
   private readonly host: string;
@@ -23,10 +24,13 @@ export class Client {
     this.session.defaults.headers.common["User-Agent"] = userAgent;
     this.session.defaults.headers.common["X-API-KEY"] = apiKey;
     setUpErrorHandling(this.session);
-
     if (isEmpty(this.context)) {
       this._refreshContext().then((ctx) => this.context = ctx);
     }
+  }
+
+  public interactiveReport (name: string) {
+    return new InteractiveReport(this, name);
   }
 
   public model (name: string) {
