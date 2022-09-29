@@ -1,6 +1,6 @@
 import { Model } from "./Model";
 import axios, { Axios } from "axios";
-import { isEmpty, setUpErrorHandling } from "./utils/helpers";
+import { setUpErrorHandling } from "./utils/helpers";
 import { Record } from "./Record";
 import { Report } from "./Report";
 import { InteractiveReport } from "./InteractiveReport";
@@ -25,9 +25,6 @@ export class Client {
     this.session.defaults.headers.common["User-Agent"] = userAgent;
     this.session.defaults.headers.common["X-API-KEY"] = apiKey;
     setUpErrorHandling(this.session);
-    if (isEmpty(this.context)) {
-      this._refreshContext().then((ctx) => this.context = ctx);
-    }
   }
 
   public interactiveReport (name: string) {
@@ -53,12 +50,5 @@ export class Client {
 
   public wizard (name: string) {
     return new Wizard(this, name);
-  }
-
-  // TODO: Figure out how to get this to work properly
-  public async _refreshContext () {
-    const User = this.model("res.user");
-    this.context = await User.method({ name: "get_preferences", params: [true] });
-    return this.context;
   }
 }

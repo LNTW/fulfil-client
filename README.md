@@ -4,7 +4,7 @@
 
 ### Fulfil REST API Client for Typescript/Javascript
 
-#### Installation [Not Implemented]
+#### Installation
 
 ```
 npm i fulfil-client
