@@ -7,7 +7,7 @@
 #### Installation
 
 ```
-npm i fulfil-client
+npm i @lntw/fulfil-client
 ```
 
 #### Quickstart
