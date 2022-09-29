@@ -27,9 +27,6 @@
     "type": "git",
     "url": "https://github.com/LNTW/fulfil-client"
   },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/lntw"
-  },
   "license": "ISC",
   "dependencies": {
     "axios": "^0.27.2"
