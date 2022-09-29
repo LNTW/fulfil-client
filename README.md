@@ -1,8 +1,8 @@
-# Fulfil.io Typescript Client
+# Fulfil.io API Client
 
 ---
 
-### Fulfil REST API Client for Typescript/Javascript
+### A node package for the Fulfil.io API written in Typescript.
 
 #### Installation
 
