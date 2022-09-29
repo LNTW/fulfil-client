@@ -1,14 +1,12 @@
 {
-  "name": "fulfil-client",
+  "name": "@lntw/fulfil-client",
   "version": "0.1.0",
   "description": "Interact with the Fulfil.io API using Javascript",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
     "prepare": "npm run build",
-    "prepublishOnly": "npm test",
     "version": "git add -A src",
     "postversion": "git push && git push --tags"
   },
@@ -21,7 +19,17 @@
   "files": [
     "lib/**/*"
   ],
-  "author": "Michael Farwell",
+  "author": {
+    "name": "Michael Farwell",
+    "email": "mike@lie-nielsen.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LNTW/fulfil-client"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/lntw"
+  },
   "license": "ISC",
   "dependencies": {
     "axios": "^0.27.2"
